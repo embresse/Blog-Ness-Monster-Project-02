@@ -1,5 +1,6 @@
 const { Comment } = require('../models');
 
+// seed comments for seed posts by users
 const commentData = [
     {
         post_id: 1,

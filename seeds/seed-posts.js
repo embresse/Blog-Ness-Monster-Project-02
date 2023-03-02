@@ -1,5 +1,6 @@
 const { Post } = require('../models');
 
+// seed posts for seed users 
 const postData = [
     {
         user_id: 1,

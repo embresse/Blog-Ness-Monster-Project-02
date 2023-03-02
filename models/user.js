@@ -37,21 +37,22 @@ User.init({
   user_created: {
     type: DataTypes.DATE,
   },
-  hooks: {
-    beforeCreate: async (newUserData) => {
-      newUserData.email = await new UserData.email.toLowerCase();
-      newUserData.username = await new UserData.username.toLowerCase();
-      newUserData.password = await bcrypt.hash(newUserData.password, 10);
-      return newUserData;
-    },
-
-    // beforeUpdate hook ??
+  
+},
+{hooks: {
+  beforeCreate: async (newUserData) => {
+    newUserData.email = await new UserData.email.toLowerCase();
+    newUserData.username = await new UserData.username.toLowerCase();
+    newUserData.password = await bcrypt.hash(newUserData.password, 10);
+    return newUserData;
   },
-  sequelize,
-  timestamps: false,
-  freezeTableName: true,
-  underscored: true,
-  modelName: "user",
-});
+
+  // beforeUpdate hook ??
+},
+sequelize,
+timestamps: false,
+freezeTableName: true,
+underscored: true,
+modelName: "user",});
 
 module.exports = User;
