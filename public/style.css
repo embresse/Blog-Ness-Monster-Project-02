@@ -41,3 +41,8 @@ h6 {
 a {
   text-decoration: none;
 }
+
+.navbar {
+  position: fixed;
+  background-color: #f7f7f7;
+}
