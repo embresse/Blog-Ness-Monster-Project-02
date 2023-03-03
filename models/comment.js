@@ -26,7 +26,7 @@ Comment.init({
       key: "id",
     },
   },
-  comment_text: {
+  body: {
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -34,11 +34,14 @@ Comment.init({
     type: DataTypes.DATE,
   },
 
+},
+{
   sequelize,
   timestamps: false,
   freezeTableName: true,
   underscored: true,
   modelName: "comment",
+
 });
 
 module.exports = Comment;
