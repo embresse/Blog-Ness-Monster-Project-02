@@ -2,14 +2,14 @@ const router = require("express").Router();
 const { Post, Comment, User } = require("../models");
 const withAuth = require("../utils/auth");
 
-// if user logged in, with show homepage with all posts
+// if user logged in shows homepage with all posts
 router.get("/", withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
       include: [User],
     });
 
-    const posts = postData.map((post) => this.post.get({ plain: true }));
+    const posts = postData.map((post) => post.get({ plain: true }));
 
     res.render("homepage", {
       posts,
