@@ -5,7 +5,7 @@ const commentData = [
     {
         post_id: 1,
         user_id: 2,
-        comment_text: 'GREAT POST!!!',
+        body: 'GREAT POST!!!',
         comment_date: new Date(),
     },
 ]
