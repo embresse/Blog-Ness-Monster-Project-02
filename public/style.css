@@ -65,6 +65,39 @@ a {
   text-decoration: none;
 }
 
+.hero {
+  padding: 5%;
+  background-color: rgb(11, 58, 11);
+  color: bisque;
+}
+
+.hero p {
+  max-width: 75%;
+}
+
+.app-title {
+  font-size: 3rem;
+  background-color: rgb(11, 58, 11);
+  color: var(--dark);
+  padding: 0 10px;
+  display: inline-block;
+  box-shadow: 6px 5px;
+}
+
+.app-title a {
+  color: rgb(37, 10, 10);
+}
+
+.list-group {
+  padding: 1%;
+}
+
+.list-item {
+  margin-bottom: 10px;
+  padding: 2%;
+  text-decoration: none;
+}
+
 /* Cards */
 .card {
   margin: 20px;
