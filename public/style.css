@@ -75,3 +75,7 @@ a {
   color: bisque;
   padding: 1%;
 }
+
+.card-body {
+  padding: 3%;
+}
