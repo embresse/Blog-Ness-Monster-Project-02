@@ -47,6 +47,10 @@ a {
   background-color: #f7f7f7;
 }
 
+.nav-item {
+  margin: 0 40 px;
+}
+
 .btn {
   font-size: small;
   text-decoration: none;
@@ -56,6 +60,14 @@ a {
   border: none;
   outline: none;
   background-color: rgb(11, 58, 11);
+}
+
+.btn-inline {
+  display: inline;
+}
+
+.li-inline {
+  display: inline;
 }
 
 .footer {
