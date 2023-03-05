@@ -46,3 +46,36 @@ a {
   position: fixed;
   background-color: #f7f7f7;
 }
+
+.btn {
+  font-size: small;
+  text-decoration: none;
+  padding: 10px 10px;
+  width: 100%;
+  color: bisque;
+  border: none;
+  outline: none;
+  background-color: rgb(11, 58, 11);
+}
+
+.footer {
+  display: inline-block;
+  padding: 1px;
+  background-color: #f7f7f7;
+  text-decoration: none;
+}
+
+/* Cards */
+.card {
+  margin: 20px;
+  border: 4px;
+}
+
+.card-header {
+  color: bisque;
+  padding: 1%;
+}
+
+.card-body {
+  padding: 3%;
+}

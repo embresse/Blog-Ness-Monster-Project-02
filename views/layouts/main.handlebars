@@ -1,33 +1,40 @@
 <html lang="en">
+
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Blog Ness Monster</title>
-    <link rel="stylesheet" href="/public/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
 
-  <body>
-
-    <header>
-      <h1>The Blog Ness Monster</h1>
-    </header>
-
+  <body class="flex-column min-100-vh">
     <nav class="navbar">
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Sign Up</a></li>
-        <li><a href="#">Login</a></li>
+        <li class="li-inline nav-item"><a href="/">Home</a></li>
+        <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
+        <li class="li-inline nav-item"><a href="/login">Login</a></li>
+        <li class="li-inline nav-item"><a
+            href="#"
+            id="logout-link"
+          >Logout</a></li>
       </ul>
     </nav>
+    <header class="hero">
+      <h1 class="app-title"><a href="/">The Blog Ness Monster</a></h1>
+    </header>
 
-    <article>
+    <main class="col-auto">
       {{{body}}}
-    </article>
+    </main>
 
-    <footer>
-      A Blog Ness Monster Production
+    <footer class="flex-row justify-center">
+      &copy; A Blog Ness Monster Production
     </footer>
-
   </body>
+
 </html>
+<script src="/js/logout.js"></script>
