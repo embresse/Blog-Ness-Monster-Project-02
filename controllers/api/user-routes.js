@@ -8,13 +8,15 @@ router.post("/", async (req, res) => {
       username: req.body.username,
       password: req.body.password,
     });
-
+    console.log("creating new user")
+    console.log(newUser)
     req.session.save(() => {
       req.session.userId = newUser.id;
       req.session.username = newUser.username;
       req.session.loggedIn = true;
 
       res.json(newUser);
+      console.log("New user Created")
     });
   } catch (err) {
     res.status(500).json(err);
@@ -61,6 +63,21 @@ router.post("/login", async (req, res) => {
       .json({ message: "No user account found! We have a non-believer..." });
   }
 });
+
+router.get('/all', async (req, res) => {
+  try {
+    const userData = await User.findAll({
+      attributes: { exclude: ['password'] },
+      
+    });
+    res.json(userData)
+
+  }
+
+  catch (err) {
+    res.status(500).json(err)
+  }
+})
 
 // logout route, destroys session >:)
 router.post("/logout", (req, res) => {
