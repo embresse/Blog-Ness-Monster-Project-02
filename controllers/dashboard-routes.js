@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { Post } = require("../models/");
 const withAuth = require("../utils/auth");
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll({
       where: {
@@ -21,10 +21,14 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
+
+
 router.get('/new', withAuth, (req, res) => {
   res.render('new-post', {
     layout: 'dashboard',
   });
 });
+
+
 
 module.exports = router;
