@@ -4,6 +4,8 @@ const signupFormHandler = async function(event) {
     const usernameEl = document.querySelector('#username-input-signup');
     const passwordEl = document.querySelector('#password-input-signup');
   
+    console.log(usernameEl)
+    console.log(passwordEl)
     const response = await fetch('/api/user', {
       method: 'POST',
       body: JSON.stringify({
@@ -12,7 +14,8 @@ const signupFormHandler = async function(event) {
       }),
       headers: { 'Content-Type': 'application/json' },
     });
-  
+    console.log(response)
+    console.log(response.body)
     if (response.ok) {
       document.location.replace('/dashboard');
     } else {
