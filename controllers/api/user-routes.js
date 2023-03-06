@@ -64,6 +64,21 @@ router.post("/login", async (req, res) => {
   }
 });
 
+router.get('/all', async (req, res) => {
+  try {
+    const userData = await User.findAll({
+      attributes: { exclude: ['password'] },
+      
+    });
+    res.json(userData)
+
+  }
+
+  catch (err) {
+    res.status(500).json(err)
+  }
+})
+
 // logout route, destroys session >:)
 router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
