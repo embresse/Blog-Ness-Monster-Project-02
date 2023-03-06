@@ -11,7 +11,7 @@ router.post("/", async (req, res) => {
     console.log("creating new user")
     console.log(newUser)
     req.session.save(() => {
-      req.session.userId = newUser.id;
+      req.session.user_id = newUser.id;
       req.session.username = newUser.username;
       req.session.loggedIn = true;
 
@@ -44,13 +44,13 @@ router.post("/login", async (req, res) => {
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: "Wrong Password! Do we have a shapeshift?" });
+        .json({ message: "Wrong Password! Do we have a shapeshifter?" });
       return;
     }
 
     // save session info
     req.session.save(() => {
-      req.session.userId = user.id;
+      req.session.user_id = user.id;
       req.session.username = user.username;
       req.session.loggedIn = true;
     // response message if logged in 
