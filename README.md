@@ -21,8 +21,9 @@ npm run seed
 
 ## Usage
 ```md
-**links to deployed page and github
-**screenshot
+https://github.com/embresse/Blog-Ness-Monster-Project-02
+
+
 ```
 
 ## Credits
