@@ -19,6 +19,17 @@ npm i to install packages
 npm run seed
 ```
 
+## Technologies
+```md
+Node.js
+Express
+Handlebars
+MySQL
+Sequelize
+bCrypt
+CSS Peek (new tech)
+```
+
 ## Usage
 ```md
 https://github.com/embresse/Blog-Ness-Monster-Project-02
