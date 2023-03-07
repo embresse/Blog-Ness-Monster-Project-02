@@ -9,7 +9,7 @@
         "seed": "node seeds/seed.js"
     },
     "engines": {
-        "node": "16.x"
+        "node": "v16.16.0"
       },
     "dependencies": {
         "@sendgrid/mail": "^7.7.0",
