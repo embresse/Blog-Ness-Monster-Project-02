@@ -2,13 +2,13 @@ const router = require("express").Router();
 const { User } = require("../../models");
 
 // get all users
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   try {
-      const users = await User.findAll();
-      res.status(200).json(users);
+    const users = await User.findAll();
+    res.status(200).json(users);
   } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
+    console.log(err);
+    res.status(500).json(err);
   }
 });
 
@@ -19,17 +19,16 @@ router.post("/", async (req, res) => {
       username: req.body.username,
       password: req.body.password,
     });
-    console.log("creating new user")
-    console.log(newUser)
+    console.log("creating new user");
+    console.log(newUser);
     req.session.save(() => {
-      req.session.user_id = newUser.id;
+      req.session.userId = newUser.id;
       req.session.username = newUser.username;
       req.session.loggedIn = true;
 
       res.json(newUser);
-      console.log("New user Created")
+      console.log("New user Created");
     });
-
   } catch (err) {
     res.status(500).json(err);
   }
@@ -62,10 +61,10 @@ router.post("/login", async (req, res) => {
 
     // save session info
     req.session.save(() => {
-      req.session.user_id = user.id;
+      req.session.userId = user.id;
       req.session.username = user.username;
       req.session.loggedIn = true;
-    // response message if logged in 
+      // response message if logged in
       res.json({ user, message: "You are now logged in!" });
     });
   } catch (err) {
@@ -75,21 +74,6 @@ router.post("/login", async (req, res) => {
       .json({ message: "No user account found! We have a non-believer..." });
   }
 });
-
-router.get('/all', async (req, res) => {
-  try {
-    const userData = await User.findAll({
-      attributes: { exclude: ['password'] },
-      
-    });
-    res.json(userData)
-
-  }
-
-  catch (err) {
-    res.status(500).json(err)
-  }
-})
 
 // logout route, destroys session >:)
 router.post("/logout", (req, res) => {
